@@ -75,6 +75,10 @@ async function loadDataFromJson() {
             }
             
             console.log('Loaded data:', data);
+            console.log('Sample nodes:', data.nodes ? data.nodes.slice(0, 3) : 'No nodes');
+            console.log('Total nodes:', data.nodes ? data.nodes.length : 0);
+            console.log('Total links:', data.links ? data.links.length : 0);
+            console.log('Node types:', data.nodes ? [...new Set(data.nodes.map(n => n.type))] : 'No types');
             convertToHierarchicalData();
         } else {
             console.error('Invalid data structure');
@@ -164,19 +168,75 @@ async function resetJsonData() {
 }
 window.resetJsonData = resetJsonData;
 
+// --- Add Test Data ---
+async function addTestData() {
+    const testData = {
+        nodes: [
+            { id: "Channel-SIU-Test", name: "SIU", type: "Channel" },
+            { id: "Destination-SIU-Dest1", name: "SIU Destination 1", type: "Destination" },
+            { id: "Destination-SIU-Dest2", name: "SIU Destination 2", type: "Destination" },
+            { id: "Transformer-SIU-Trans1", name: "SIU Transformer 1", type: "Transformer" },
+            { id: "Transformer-SIU-Trans2", name: "SIU Transformer 2", type: "Transformer" },
+            { id: "Transformer-SIU-Trans3", name: "SIU Transformer 3", type: "Transformer" }
+        ],
+        links: [
+            { source: "Channel-SIU-Test", target: "Destination-SIU-Dest1" },
+            { source: "Channel-SIU-Test", target: "Destination-SIU-Dest2" },
+            { source: "Destination-SIU-Dest1", target: "Transformer-SIU-Trans1" },
+            { source: "Destination-SIU-Dest1", target: "Transformer-SIU-Trans2" },
+            { source: "Destination-SIU-Dest2", target: "Transformer-SIU-Trans3" }
+        ]
+    };
+
+    try {
+        const response = await fetch('/save-data', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(testData)
+        });
+
+        if (response.ok) {
+            loadDataFromJson();
+        } else {
+            console.error('Error saving test data');
+        }
+    } catch (error) {
+        console.error('Error adding test data:', error);
+    }
+}
+window.addTestData = addTestData;
+
 // --- Convert to Hierarchical Data ---
 function convertToHierarchicalData() {
-    if (!graphData || !graphData.nodes || !graphData.links) return;
+    if (!graphData || !graphData.nodes || !graphData.links) {
+        console.log('No graph data available for conversion');
+        return;
+    }
+    
+    console.log('Converting to hierarchical data...');
+    console.log('Input nodes:', graphData.nodes.length);
+    console.log('Input links:', graphData.links.length);
     
     // Create a map of node IDs to nodes
     const nodeMap = new Map();
     graphData.nodes.forEach(node => {
-        nodeMap.set(node.id, { ...node, children: [] });
+        // Ensure all properties are preserved
+        const nodeWithChildren = {
+            id: node.id,
+            name: node.name,
+            type: node.type,
+            children: []
+        };
+        nodeMap.set(node.id, nodeWithChildren);
     });
+    
+    console.log('Node map created with', nodeMap.size, 'nodes');
     
     // Build the hierarchy
     const rootNodes = [];
     const childrenSet = new Set();
+    
+    console.log('Processing', graphData.links.length, 'links...');
     
     graphData.links.forEach(link => {
         const sourceNode = nodeMap.get(link.source);
@@ -185,8 +245,12 @@ function convertToHierarchicalData() {
         if (sourceNode && targetNode) {
             sourceNode.children.push(targetNode);
             childrenSet.add(targetNode.id);
+        } else {
+            console.log('Link references missing node:', link);
         }
     });
+    
+    console.log('Children set size:', childrenSet.size);
     
     // Find root nodes (nodes that are not children of any other node)
     graphData.nodes.forEach(node => {
@@ -198,8 +262,12 @@ function convertToHierarchicalData() {
         }
     });
     
+    console.log('Found', rootNodes.length, 'root nodes');
+    console.log('Root node names:', rootNodes.map(n => n.name));
+    
     // If no root nodes found, create a virtual root
     if (rootNodes.length === 0 && graphData.nodes.length > 0) {
+        console.log('No root nodes found, creating virtual root with', nodeMap.size, 'children');
         const virtualRoot = {
             id: 'virtual-root',
             name: 'Root',
@@ -208,9 +276,11 @@ function convertToHierarchicalData() {
         };
         treeData = d3.hierarchy(virtualRoot);
     } else if (rootNodes.length === 1) {
+        console.log('Single root node found:', rootNodes[0].name);
         treeData = d3.hierarchy(rootNodes[0]);
     } else {
         // Multiple root nodes - create a virtual root
+        console.log('Multiple root nodes found, creating virtual root');
         const virtualRoot = {
             id: 'virtual-root',
             name: 'Root',
@@ -221,6 +291,14 @@ function convertToHierarchicalData() {
     }
     
     console.log('Tree data:', treeData);
+    console.log('Sample tree nodes:', treeData.descendants ? treeData.descendants().slice(0, 3).map(d => ({ id: d.data.id, name: d.data.name, type: d.data.type })) : 'No descendants');
+    console.log('Full tree structure sample:', treeData.descendants ? treeData.descendants().slice(0, 2).map(d => ({ 
+        id: d.data.id, 
+        name: d.data.name, 
+        type: d.data.type,
+        hasChildren: d.children && d.children.length > 0,
+        childrenCount: d.children ? d.children.length : 0
+    })) : 'No descendants');
     renderCollapsibleTree(treeData);
 }
 
@@ -346,179 +424,118 @@ function renderCollapsibleTree(data) {
     console.log('Nodes with statuses:', Object.keys(statuses));
     console.log('Sample node data:', root.descendants().slice(0, 3).map(d => d.data));
 
-    // Add text labels with background for better visibility
-    const textGroup = node.append('g');
-    
-    // Add child count badge in center of node
-    node.append('text')
-        .attr('class', 'child-count-badge')
-        .attr('text-anchor', 'middle')
-        .attr('dy', '0.35em')
-        .style('font-size', '12px')
-        .style('font-weight', 'bold')
-        .style('fill', '#fff')
-        .style('pointer-events', 'none')
-        .style('text-shadow', '0 1px 2px rgba(0,0,0,0.5)')
-        .text(d => {
-            // Count visible children (not collapsed)
-            if (d.data.children && d.data.children.length > 0) {
-                return d.data.children.length.toString();
-            }
-            return '';
-        });
-    
-    textGroup.append('rect')
-        .attr('class', 'text-background')
-        .attr('x', d => {
-            if (treeOrientation === 'horizontal') {
-                return 10; // Slightly before text
-            }
-            return -20; // Center around text for vertical
-        })
-        .attr('y', d => {
-            if (treeOrientation === 'radial') {
-                return d.x < Math.PI ? -8 : -12;
-            } else if (treeOrientation === 'horizontal') {
-                return -8;
-            } else {
-                return 0.3; // Below node
-            }
-        })
-        .attr('width', d => {
-            // Estimate width based on text length
-            const textLength = d.data.name.length;
-            return Math.max(textLength * 6, 40); // Minimum width of 40px
-        })
-        .attr('height', 16)
-        .attr('rx', 3) // Rounded corners
-        .style('fill', 'rgba(255,255,255,0.9)')
-        .style('stroke', '#ccc')
-        .style('stroke-width', '1px');
+    // Create node content using foreignObject for HTML
+    node.each(function(d) {
+        const nodeElement = d3.select(this);
+        
+        // Create foreignObject to embed HTML
+        const foreignObject = nodeElement.append('foreignObject')
+            .attr('width', 200)
+            .attr('height', 40)
+            .attr('x', -100)
+            .attr('y', -20);
 
-    textGroup.append('text')
-        .text(d => {
-            console.log('Adding text label for node:', d.data.name, 'type:', d.data.type);
-            return d.data.name;
-        })
-        .attr('text-anchor', d => {
-            if (treeOrientation === 'radial') {
-                return d.x < Math.PI ? 'start' : 'end';
-            } else if (treeOrientation === 'horizontal') {
-                return 'start';
+        // Debug: Log the node data to see what's available
+        console.log('Node data for rendering:', d.data);
+        
+        // Get node name with fallback - check all possible locations
+        let nodeName = 'Unknown Node';
+        let nodeId = 'unknown';
+        let nodeType = 'Unknown';
+        
+        // Check if name exists in d.data
+        if (d.data && d.data.name) {
+            nodeName = d.data.name;
+        } else if (d.data && d.data.id) {
+            // Extract name from ID if no name property
+            const idParts = d.data.id.split('-');
+            if (idParts.length > 1) {
+                nodeName = idParts[1]; // Take the second part as name
             } else {
-                return 'middle';
+                nodeName = d.data.id;
             }
-        })
-        .attr('dy', d => {
-            if (treeOrientation === 'radial') {
-                return d.x < Math.PI ? '0.35em' : '-0.35em';
-            } else if (treeOrientation === 'horizontal') {
-                return '0.35em';
-            } else {
-                return '1.5em'; // Increased distance below node for better visibility
-            }
-        })
-        .attr('x', d => {
-            if (treeOrientation === 'horizontal') {
-                return 15; // Increased offset from node for horizontal
-            }
-            return 0;
-        })
-        .style('font-size', '11px') // Slightly smaller for better fit
-        .style('fill', '#333') // Dark gray for better readability
-        .style('font-weight', '600')
-        .style('pointer-events', 'none') // Prevent text from interfering with node clicks
-        .style('opacity', '1') // Ensure text is visible
-        .style('visibility', 'visible'); // Ensure text is visible
-
-        // Add comment icon if node has a comment
-        if (comments[d.data.id]) {
-            console.log('Adding comment icon for node:', d.data.name);
-            const commentIcon = node.append('text')
-                .attr('class', 'comment-icon')
-                .attr('text-anchor', 'end')
-                .attr('dy', '0.35em')
-                .attr('x', -15) // Position relative to node center
-                .style('font-size', '14px')
-                .style('fill', '#ffc107')
-                .style('cursor', 'pointer')
-                .style('font-weight', 'bold')
-                .style('opacity', '1')
-                .style('visibility', 'visible')
-                .text('💬')
-                .on('click', function(event) {
-                    event.stopPropagation();
-                    openCommentModal(d.data.id, d.data.name);
-                });
         }
-
-        // Add status indicator if node has a status (only for destination nodes)
-        if (d.data.type === 'Destination' && statuses[d.data.id]) {
-            console.log('Adding status icon for destination node:', d.data.name);
-            const statusInfo = getStatusDisplay(statuses[d.data.id]);
-            const statusIcon = node.append('text')
-                .attr('class', 'status-icon')
-                .attr('text-anchor', 'end')
-                .attr('dy', '0.35em')
-                .attr('x', -30) // Position relative to node center, further left than comment
-                .style('font-size', '16px')
-                .style('fill', '#007bff')
-                .style('cursor', 'pointer')
-                .style('font-weight', 'bold')
-                .style('opacity', '1')
-                .style('visibility', 'visible')
-                .text('⚡') // Status indicator
-                .on('click', function(event) {
-                    event.stopPropagation();
-                    showStatusDropdown(d.data.id, d.data.name, event);
-                });
-        } else if (d.data.type === 'Destination') {
-            console.log('Adding status trigger for destination node:', d.data.name);
-            // Add status dropdown trigger for destination nodes without status
-            const statusTrigger = node.append('text')
-                .attr('class', 'status-trigger')
-                .attr('text-anchor', 'end')
-                .attr('dy', '0.35em')
-                .attr('x', -30) // Position relative to node center, further left than comment
-                .style('font-size', '14px')
-                .style('fill', '#6c757d')
-                .style('cursor', 'pointer')
-                .style('font-weight', 'bold')
-                .style('opacity', '1')
-                .style('visibility', 'visible')
-                .text('⚡')
-                .on('click', function(event) {
-                    event.stopPropagation();
-                    showStatusDropdown(d.data.id, d.data.name, event);
-                });
+        
+        // Get node ID
+        if (d.data && d.data.id) {
+            nodeId = d.data.id;
         }
+        
+        // Get node type
+        if (d.data && d.data.type) {
+            nodeType = d.data.type;
+        }
+        
+        console.log('Extracted node info:', { nodeName, nodeId, nodeType });
+        
+        // Create HTML content
+        const htmlContent = `
+            <div class="d-flex align-items-center" style="width: 100%; height: 100%;">
+                <!-- Status Icon (Destination nodes only) -->
+                ${nodeType === 'Destination' ? `
+                    <div class="me-2" style="cursor: pointer;" onclick="showStatusDropdown('${nodeId}', '${nodeName}', event)">
+                        <div class="bg-secondary rounded p-1" style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-lightning text-white" style="font-size: 10px;"></i>
+                        </div>
+                    </div>
+                ` : ''}
+                
+                <!-- Comment Icon (Nodes with comments) -->
+                ${comments[nodeId] ? `
+                    <div class="me-2" style="cursor: pointer;" onclick="openCommentModal('${nodeId}', '${nodeName}')">
+                        <div class="bg-secondary rounded p-1" style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-chat-dots text-white" style="font-size: 10px;"></i>
+                        </div>
+                    </div>
+                ` : ''}
+                
+                <!-- Child Count Badge -->
+                <div class="me-2">
+                    <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" 
+                         style="width: 24px; height: 24px; border: 2px solid white;">
+                        <span class="text-white fw-bold" style="font-size: 10px;">
+                            ${d.children && d.children.length > 0 ? d.children.length : ''}
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Node Name Label -->
+                <div class="bg-dark rounded px-2 py-1">
+                    <span class="text-white" style="font-size: 11px; font-weight: 500;">${nodeName}</span>
+                </div>
+            </div>
+        `;
 
-        // Add click handler for expand/collapse
-        node.on('click', function(event, d) {
-            if (d.children && d.children.length > 0) {
-                // Set flag to preserve view state
-                isPreservingView = true;
-                
-                if (collapsedNodes.has(d.data.id)) {
-                    collapsedNodes.delete(d.data.id);
-                } else {
-                    collapsedNodes.add(d.data.id);
-                }
-                saveCollapsedState();
-                renderCollapsibleTree(treeData);
-                
-                // Reset flag after rendering
-                setTimeout(() => {
-                    isPreservingView = false;
-                }, 100);
+        foreignObject.append('xhtml:div')
+            .html(htmlContent);
+    });
+
+    // Add click handler for expand/collapse
+    node.on('click', function(event, d) {
+        if (d.children && d.children.length > 0) {
+            // Set flag to preserve view state
+            isPreservingView = true;
+            
+            if (collapsedNodes.has(d.data.id)) {
+                collapsedNodes.delete(d.data.id);
+            } else {
+                collapsedNodes.add(d.data.id);
             }
-        });
+            saveCollapsedState();
+            renderCollapsibleTree(treeData);
+            
+            // Reset flag after rendering
+            setTimeout(() => {
+                isPreservingView = false;
+            }, 100);
+        }
+    });
 
-        // Add right-click handler for comment
-        node.on('contextmenu', function(event, d) {
-            event.preventDefault();
-            openCommentModal(d.data.id, d.data.name);
-        });
+    // Add right-click handler for comment
+    node.on('contextmenu', function(event, d) {
+        event.preventDefault();
+        openCommentModal(d.data.id, d.data.name);
+    });
 
     // Add cursor style
     node.style('cursor', 'pointer');
