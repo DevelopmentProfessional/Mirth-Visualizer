@@ -7,6 +7,10 @@ yarn-error.log*
 # D3.js repository (not needed in our project)
 d3/
 
+# Data files (user-specific and generated data)
+LoadedData.json
+UserData.json
+
 # Environment variables
 .env
 .env.local
