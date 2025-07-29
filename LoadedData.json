@@ -1,0 +1,1372 @@
+{
+  "nodes": [
+    {
+      "id": "Channel-SIU-0",
+      "name": "SIU",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-MILN_SIU_to_Olympus-1",
+      "name": "MILN_SIU_to_Olympus",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message_Header-2",
+      "name": "MSH-Message_Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification-3",
+      "name": "PID-Patient_Identification",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-SCH-Schedule_Activity_Information-4",
+      "name": "SCH-Schedule_Activity_Information",
+      "type": "Transformer"
+    },
+    {
+      "id": "Channel-RDE-5",
+      "name": "RDE",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-MILN_RDE_to_Pyxis-6",
+      "name": "MILN_RDE_to_Pyxis",
+      "type": "Destination"
+    },
+    {
+      "id": "Channel-ORU-7",
+      "name": "ORU",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-MILN_ORU_to_eDelivery-8",
+      "name": "MILN_ORU_to_eDelivery",
+      "type": "Destination"
+    },
+    {
+      "id": "Destination-MILN_ORU_to_Fuji_PACS-9",
+      "name": "MILN_ORU_to_Fuji_PACS",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message_Header-10",
+      "name": "MSH-Message_Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification-11",
+      "name": "PID-Patient_Identification",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PV1-Patient_Visit-12",
+      "name": "PV1-Patient_Visit",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-ORC-Common_Order_Segment-13",
+      "name": "ORC-Common_Order_Segment",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-OBR-Observation_Request_Segment-14",
+      "name": "OBR-Observation_Request_Segment",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-OBX-Observation_segment-15",
+      "name": "OBX-Observation_segment",
+      "type": "Transformer"
+    },
+    {
+      "id": "Destination-MILN_ORU_to_ARIA_MDM-16",
+      "name": "MILN_ORU_to_ARIA_MDM",
+      "type": "Destination"
+    },
+    {
+      "id": "Channel-ORM-17",
+      "name": "ORM",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-MILN_ORM_to_Quest-18",
+      "name": "MILN_ORM_to_Quest",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message_Header-19",
+      "name": "MSH-Message_Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification-20",
+      "name": "PID-Patient_Identification",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-ORC-Common_Order-21",
+      "name": "ORC-Common_Order",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-OBR-Observation_Request-22",
+      "name": "OBR-Observation_Request",
+      "type": "Transformer"
+    },
+    {
+      "id": "Destination-MILN_ORM_to_Metha_FTP-23",
+      "name": "MILN_ORM_to_Metha_FTP",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message_Header-24",
+      "name": "MSH-Message_Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Information-25",
+      "name": "PID-Patient_Information",
+      "type": "Transformer"
+    },
+    {
+      "id": "Destination-MILN_ORM_to_NMIS-26",
+      "name": "MILN_ORM_to_NMIS",
+      "type": "Destination"
+    },
+    {
+      "id": "Destination-MILN_ORM_to_PowerScribe-27",
+      "name": "MILN_ORM_to_PowerScribe",
+      "type": "Destination"
+    },
+    {
+      "id": "Destination-MILN_ORM_to_Fuji_PACS-28",
+      "name": "MILN_ORM_to_Fuji_PACS",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-\n            0\n            true\n            \n          -29",
+      "name": "\n            0\n            true\n            \n          ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-\n            1\n            true\n            \n          -30",
+      "name": "\n            1\n            true\n            \n          ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-\n            2\n            true\n            \n          -31",
+      "name": "\n            2\n            true\n            \n          ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-\n            3\n            true\n            \n          -32",
+      "name": "\n            3\n            true\n            \n          ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-\n            4\n            true\n            \n          -33",
+      "name": "\n            4\n            true\n            \n          ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-\n            5\n            true\n            \n          -34",
+      "name": "\n            5\n            true\n            \n          ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-\n            6\n            true\n            \n          -35",
+      "name": "\n            6\n            true\n            \n          ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Destination-MILN_ORM_to_Fuji_CVIS-36",
+      "name": "MILN_ORM_to_Fuji_CVIS",
+      "type": "Destination"
+    },
+    {
+      "id": "Destination-MILN_ORM_to_Epiphany-37",
+      "name": "MILN_ORM_to_Epiphany",
+      "type": "Destination"
+    },
+    {
+      "id": "Destination-MILN_ORM_to_MRS-38",
+      "name": "MILN_ORM_to_MRS",
+      "type": "Destination"
+    },
+    {
+      "id": "Destination-MILN_ORM_to_ITC-39",
+      "name": "MILN_ORM_to_ITC",
+      "type": "Destination"
+    },
+    {
+      "id": "Destination-MILN_ORM_to_DFM-40",
+      "name": "MILN_ORM_to_DFM",
+      "type": "Destination"
+    },
+    {
+      "id": "Channel-ADT-41",
+      "name": "ADT",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-MILN_ADT_to_Metha_FTP-42",
+      "name": "MILN_ADT_to_Metha_FTP",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message_Header-43",
+      "name": "MSH-Message_Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-EVN-Event_type-44",
+      "name": "EVN-Event_type",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification-45",
+      "name": "PID-Patient_Identification",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PV1-Patient_Visit-46",
+      "name": "PV1-Patient_Visit",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PV2-Patient_Visit-Additional_Information -47",
+      "name": "PV2-Patient_Visit-Additional_Information ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Destination-MILN_ADT_to_GE-48",
+      "name": "MILN_ADT_to_GE",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message_Header-49",
+      "name": "MSH-Message_Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-EVN_Event_type  -50",
+      "name": "EVN_Event_type  ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification  -51",
+      "name": "PID-Patient_Identification  ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PV1-PatientVisit-52",
+      "name": "PV1-PatientVisit",
+      "type": "Transformer"
+    },
+    {
+      "id": "Destination-MILN_ADT_to_RL_Datix-53",
+      "name": "MILN_ADT_to_RL_Datix",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message_Header-54",
+      "name": "MSH-Message_Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-EVN-Event_type  -55",
+      "name": "EVN-Event_type  ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification  -56",
+      "name": "PID-Patient_Identification  ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PV1-Patient_Visit-57",
+      "name": "PV1-Patient_Visit",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-DG1-Diagnosis-58",
+      "name": "DG1-Diagnosis",
+      "type": "Transformer"
+    },
+    {
+      "id": "Destination-MILN_ADT_to_Varian_ARIA-59",
+      "name": "MILN_ADT_to_Varian_ARIA",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message_Header-60",
+      "name": "MSH-Message_Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification-61",
+      "name": "PID-Patient_Identification",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PD1-Patient_Additional_Demographic -62",
+      "name": "PD1-Patient_Additional_Demographic ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-NK1-Next_of_Kin-63",
+      "name": "NK1-Next_of_Kin",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PV1-Patient_Visit  -64",
+      "name": "PV1-Patient_Visit  ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PP1-Practitioner_Group-65",
+      "name": "PP1-Practitioner_Group",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PV2-Patient_Visit_Additional_Info-66",
+      "name": "PV2-Patient_Visit_Additional_Info",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-OBX-Observation_Result-67",
+      "name": "OBX-Observation_Result",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-AL1-Allergy_Information-68",
+      "name": "AL1-Allergy_Information",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-NTE-Notes_and_Comments -69",
+      "name": "NTE-Notes_and_Comments ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-GT1-Guarantor  -70",
+      "name": "GT1-Guarantor  ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Destination-MILN_ADT_to_PowerScribe-71",
+      "name": "MILN_ADT_to_PowerScribe",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message_Header-72",
+      "name": "MSH-Message_Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-EVN Event_type-73",
+      "name": "EVN Event_type",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification-74",
+      "name": "PID-Patient_Identification",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PV1-Patient_Visit-75",
+      "name": "PV1-Patient_Visit",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-AL1-Patient_Allergy_Information-76",
+      "name": "AL1-Patient_Allergy_Information",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-GT1-Guarantor-77",
+      "name": "GT1-Guarantor",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-IN1-Insurance-78",
+      "name": "IN1-Insurance",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-IN2-Insurance_Additional_Info-79",
+      "name": "IN2-Insurance_Additional_Info",
+      "type": "Transformer"
+    },
+    {
+      "id": "Destination-MILN_ADT_to_Fuji_PACS-80",
+      "name": "MILN_ADT_to_Fuji_PACS",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message-Header-81",
+      "name": "MSH-Message-Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-EVN-Event-Type-82",
+      "name": "EVN-Event-Type",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification-83",
+      "name": "PID-Patient_Identification",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PV1-Patient_Visit-84",
+      "name": "PV1-Patient_Visit",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-AL1-Patient_Allergy_Informatin-85",
+      "name": "AL1-Patient_Allergy_Informatin",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-MRG_segment-86",
+      "name": "MRG_segment",
+      "type": "Transformer"
+    },
+    {
+      "id": "Destination-MILN_ADT_to_Fuji_CVIS-87",
+      "name": "MILN_ADT_to_Fuji_CVIS",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Header-Segment-88",
+      "name": "MSH-Header-Segment",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-EVN-Event_type -89",
+      "name": "EVN-Event_type ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification-90",
+      "name": "PID-Patient_Identification",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PV1-Patient_Visit-91",
+      "name": "PV1-Patient_Visit",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-AL1-Patient_Allergy_Information-92",
+      "name": "AL1-Patient_Allergy_Information",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-MRG-segment-93",
+      "name": "MRG-segment",
+      "type": "Transformer"
+    },
+    {
+      "id": "Destination-MILN_ADT_to_Epiphany-94",
+      "name": "MILN_ADT_to_Epiphany",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message_Header-95",
+      "name": "MSH-Message_Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-EVN-Event_type-96",
+      "name": "EVN-Event_type",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification-97",
+      "name": "PID-Patient_Identification",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PV1-Patient_Visit-98",
+      "name": "PV1-Patient_Visit",
+      "type": "Transformer"
+    },
+    {
+      "id": "Destination-MILN_ADT_to_MRS-99",
+      "name": "MILN_ADT_to_MRS",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message_Header-100",
+      "name": "MSH-Message_Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-EVN-Event_type-101",
+      "name": "EVN-Event_type",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification-102",
+      "name": "PID-Patient_Identification",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PV1-Patient_Visit-103",
+      "name": "PV1-Patient_Visit",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-AL1-Patient_Allergy_Information-104",
+      "name": "AL1-Patient_Allergy_Information",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-GT1-Guarantor-105",
+      "name": "GT1-Guarantor",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-IN1-Insurance-106",
+      "name": "IN1-Insurance",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-IN2-Insurance_Additional_Info-107",
+      "name": "IN2-Insurance_Additional_Info",
+      "type": "Transformer"
+    },
+    {
+      "id": "Destination-MILN_ADT_to_Pyxis-108",
+      "name": "MILN_ADT_to_Pyxis",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message_Header-109",
+      "name": "MSH-Message_Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification-110",
+      "name": "PID-Patient_Identification",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PV1-Patient_Visit-111",
+      "name": "PV1-Patient_Visit",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-NK1-Next_Of_Kin-112",
+      "name": "NK1-Next_Of_Kin",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-AL1-Patient_Allergy_Information-113",
+      "name": "AL1-Patient_Allergy_Information",
+      "type": "Transformer"
+    },
+    {
+      "id": "Destination-MILN_ADT_to_DFM-114",
+      "name": "MILN_ADT_to_DFM",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message_Header-115",
+      "name": "MSH-Message_Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-EVN-Event_type  -116",
+      "name": "EVN-Event_type  ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification  -117",
+      "name": "PID-Patient_Identification  ",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PV1-Patient_Visit-118",
+      "name": "PV1-Patient_Visit",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-OBX-Observation_segment-119",
+      "name": "OBX-Observation_segment",
+      "type": "Transformer"
+    },
+    {
+      "id": "Channel-ARIA_ORU-120",
+      "name": "ARIA_ORU",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-ARIA_ORU_to_MILN_MDM-121",
+      "name": "ARIA_ORU_to_MILN_MDM",
+      "type": "Destination"
+    },
+    {
+      "id": "Channel-Quest_ORU-122",
+      "name": "Quest_ORU",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-Quest_Lab_ORU_to_MILN-123",
+      "name": "Quest_Lab_ORU_to_MILN",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message_Header-124",
+      "name": "MSH-Message_Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification-125",
+      "name": "PID-Patient_Identification",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-ORC-Common_Order-126",
+      "name": "ORC-Common_Order",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-OBR-Observation_Request-127",
+      "name": "OBR-Observation_Request",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-OBX-Obersation_Result-128",
+      "name": "OBX-Obersation_Result",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-NTE-Notes_And_Comments-129",
+      "name": "NTE-Notes_And_Comments",
+      "type": "Transformer"
+    },
+    {
+      "id": "Channel-Pyxis_DFT-130",
+      "name": "Pyxis_DFT",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-Pyxis_DFT_to_MILN-131",
+      "name": "Pyxis_DFT_to_MILN",
+      "type": "Destination"
+    },
+    {
+      "id": "Channel-Powerscribe_ORU-132",
+      "name": "Powerscribe_ORU",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-PowerScribe_ORU_to_MILN-133",
+      "name": "PowerScribe_ORU_to_MILN",
+      "type": "Destination"
+    },
+    {
+      "id": "Channel-MRS_ORU-134",
+      "name": "MRS_ORU",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-MRs_ORU_to_MILN-135",
+      "name": "MRs_ORU_to_MILN",
+      "type": "Destination"
+    },
+    {
+      "id": "Channel-ITC_ORU-136",
+      "name": "ITC_ORU",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-ITC_Rad_ORU_to_MILN-137",
+      "name": "ITC_Rad_ORU_to_MILN",
+      "type": "Destination"
+    },
+    {
+      "id": "Channel-PACS_ORU-138",
+      "name": "PACS_ORU",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-Fuji_PACS_ORU_to_MILN-139",
+      "name": "Fuji_PACS_ORU_to_MILN",
+      "type": "Destination"
+    },
+    {
+      "id": "Transformer-MSH-Message_Header-140",
+      "name": "MSH-Message_Header",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PID-Patient_Identification-141",
+      "name": "PID-Patient_Identification",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-PV1-Patient_Visit-142",
+      "name": "PV1-Patient_Visit",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-ORC-Common_Order-143",
+      "name": "ORC-Common_Order",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-OBR-Observation_Result-144",
+      "name": "OBR-Observation_Result",
+      "type": "Transformer"
+    },
+    {
+      "id": "Transformer-OBX-Obersation_Request-145",
+      "name": "OBX-Obersation_Request",
+      "type": "Transformer"
+    },
+    {
+      "id": "Channel-CVIS_ORU-146",
+      "name": "CVIS_ORU",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-Fuji_CVIS_ORU_to_MILN-147",
+      "name": "Fuji_CVIS_ORU_to_MILN",
+      "type": "Destination"
+    },
+    {
+      "id": "Channel-FTP_DFT_ORU-148",
+      "name": "FTP_DFT_ORU",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-Edelphyn_ORU_to_MILN-149",
+      "name": "Edelphyn_ORU_to_MILN",
+      "type": "Destination"
+    },
+    {
+      "id": "Destination-Methasoft_DFT_to_MILN-150",
+      "name": "Methasoft_DFT_to_MILN",
+      "type": "Destination"
+    },
+    {
+      "id": "Destination-Metha_DFT_to_MILN_ORU-151",
+      "name": "Metha_DFT_to_MILN_ORU",
+      "type": "Destination"
+    },
+    {
+      "id": "Destination-Cln_Sc_ORU_to_MILN-152",
+      "name": "Cln_Sc_ORU_to_MILN",
+      "type": "Destination"
+    },
+    {
+      "id": "Channel-EPIPHANY_ORU-153",
+      "name": "EPIPHANY_ORU",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-Epipany_ORU_to_MILN-154",
+      "name": "Epipany_ORU_to_MILN",
+      "type": "Destination"
+    },
+    {
+      "id": "Channel-EMPI_ADT-155",
+      "name": "EMPI_ADT",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-EMP_ADT_to_MILN-156",
+      "name": "EMP_ADT_to_MILN",
+      "type": "Destination"
+    },
+    {
+      "id": "Channel-Quest ORU-157",
+      "name": "Quest ORU",
+      "type": "Channel"
+    },
+    {
+      "id": "Destination-Destination 1-158",
+      "name": "Destination 1",
+      "type": "Destination"
+    }
+  ],
+  "links": [
+    {
+      "source": "Channel-SIU-0",
+      "target": "Destination-MILN_SIU_to_Olympus-1"
+    },
+    {
+      "source": "Destination-MILN_SIU_to_Olympus-1",
+      "target": "Transformer-MSH-Message_Header-2"
+    },
+    {
+      "source": "Destination-MILN_SIU_to_Olympus-1",
+      "target": "Transformer-PID-Patient_Identification-3"
+    },
+    {
+      "source": "Destination-MILN_SIU_to_Olympus-1",
+      "target": "Transformer-SCH-Schedule_Activity_Information-4"
+    },
+    {
+      "source": "Channel-RDE-5",
+      "target": "Destination-MILN_RDE_to_Pyxis-6"
+    },
+    {
+      "source": "Channel-ORU-7",
+      "target": "Destination-MILN_ORU_to_eDelivery-8"
+    },
+    {
+      "source": "Channel-ORU-7",
+      "target": "Destination-MILN_ORU_to_Fuji_PACS-9"
+    },
+    {
+      "source": "Destination-MILN_ORU_to_Fuji_PACS-9",
+      "target": "Transformer-MSH-Message_Header-10"
+    },
+    {
+      "source": "Destination-MILN_ORU_to_Fuji_PACS-9",
+      "target": "Transformer-PID-Patient_Identification-11"
+    },
+    {
+      "source": "Destination-MILN_ORU_to_Fuji_PACS-9",
+      "target": "Transformer-PV1-Patient_Visit-12"
+    },
+    {
+      "source": "Destination-MILN_ORU_to_Fuji_PACS-9",
+      "target": "Transformer-ORC-Common_Order_Segment-13"
+    },
+    {
+      "source": "Destination-MILN_ORU_to_Fuji_PACS-9",
+      "target": "Transformer-OBR-Observation_Request_Segment-14"
+    },
+    {
+      "source": "Destination-MILN_ORU_to_Fuji_PACS-9",
+      "target": "Transformer-OBX-Observation_segment-15"
+    },
+    {
+      "source": "Channel-ORU-7",
+      "target": "Destination-MILN_ORU_to_ARIA_MDM-16"
+    },
+    {
+      "source": "Channel-ORM-17",
+      "target": "Destination-MILN_ORM_to_Quest-18"
+    },
+    {
+      "source": "Destination-MILN_ORM_to_Quest-18",
+      "target": "Transformer-MSH-Message_Header-19"
+    },
+    {
+      "source": "Destination-MILN_ORM_to_Quest-18",
+      "target": "Transformer-PID-Patient_Identification-20"
+    },
+    {
+      "source": "Destination-MILN_ORM_to_Quest-18",
+      "target": "Transformer-ORC-Common_Order-21"
+    },
+    {
+      "source": "Destination-MILN_ORM_to_Quest-18",
+      "target": "Transformer-OBR-Observation_Request-22"
+    },
+    {
+      "source": "Channel-ORM-17",
+      "target": "Destination-MILN_ORM_to_Metha_FTP-23"
+    },
+    {
+      "source": "Destination-MILN_ORM_to_Metha_FTP-23",
+      "target": "Transformer-MSH-Message_Header-24"
+    },
+    {
+      "source": "Destination-MILN_ORM_to_Metha_FTP-23",
+      "target": "Transformer-PID-Patient_Information-25"
+    },
+    {
+      "source": "Channel-ORM-17",
+      "target": "Destination-MILN_ORM_to_NMIS-26"
+    },
+    {
+      "source": "Channel-ORM-17",
+      "target": "Destination-MILN_ORM_to_PowerScribe-27"
+    },
+    {
+      "source": "Channel-ORM-17",
+      "target": "Destination-MILN_ORM_to_Fuji_PACS-28"
+    },
+    {
+      "source": "Destination-MILN_ORM_to_Fuji_PACS-28",
+      "target": "Transformer-\n            0\n            true\n            \n          -29"
+    },
+    {
+      "source": "Destination-MILN_ORM_to_Fuji_PACS-28",
+      "target": "Transformer-\n            1\n            true\n            \n          -30"
+    },
+    {
+      "source": "Destination-MILN_ORM_to_Fuji_PACS-28",
+      "target": "Transformer-\n            2\n            true\n            \n          -31"
+    },
+    {
+      "source": "Destination-MILN_ORM_to_Fuji_PACS-28",
+      "target": "Transformer-\n            3\n            true\n            \n          -32"
+    },
+    {
+      "source": "Destination-MILN_ORM_to_Fuji_PACS-28",
+      "target": "Transformer-\n            4\n            true\n            \n          -33"
+    },
+    {
+      "source": "Destination-MILN_ORM_to_Fuji_PACS-28",
+      "target": "Transformer-\n            5\n            true\n            \n          -34"
+    },
+    {
+      "source": "Destination-MILN_ORM_to_Fuji_PACS-28",
+      "target": "Transformer-\n            6\n            true\n            \n          -35"
+    },
+    {
+      "source": "Channel-ORM-17",
+      "target": "Destination-MILN_ORM_to_Fuji_CVIS-36"
+    },
+    {
+      "source": "Channel-ORM-17",
+      "target": "Destination-MILN_ORM_to_Epiphany-37"
+    },
+    {
+      "source": "Channel-ORM-17",
+      "target": "Destination-MILN_ORM_to_MRS-38"
+    },
+    {
+      "source": "Channel-ORM-17",
+      "target": "Destination-MILN_ORM_to_ITC-39"
+    },
+    {
+      "source": "Channel-ORM-17",
+      "target": "Destination-MILN_ORM_to_DFM-40"
+    },
+    {
+      "source": "Channel-ADT-41",
+      "target": "Destination-MILN_ADT_to_Metha_FTP-42"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Metha_FTP-42",
+      "target": "Transformer-MSH-Message_Header-43"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Metha_FTP-42",
+      "target": "Transformer-EVN-Event_type-44"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Metha_FTP-42",
+      "target": "Transformer-PID-Patient_Identification-45"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Metha_FTP-42",
+      "target": "Transformer-PV1-Patient_Visit-46"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Metha_FTP-42",
+      "target": "Transformer-PV2-Patient_Visit-Additional_Information -47"
+    },
+    {
+      "source": "Channel-ADT-41",
+      "target": "Destination-MILN_ADT_to_GE-48"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_GE-48",
+      "target": "Transformer-MSH-Message_Header-49"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_GE-48",
+      "target": "Transformer-EVN_Event_type  -50"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_GE-48",
+      "target": "Transformer-PID-Patient_Identification  -51"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_GE-48",
+      "target": "Transformer-PV1-PatientVisit-52"
+    },
+    {
+      "source": "Channel-ADT-41",
+      "target": "Destination-MILN_ADT_to_RL_Datix-53"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_RL_Datix-53",
+      "target": "Transformer-MSH-Message_Header-54"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_RL_Datix-53",
+      "target": "Transformer-EVN-Event_type  -55"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_RL_Datix-53",
+      "target": "Transformer-PID-Patient_Identification  -56"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_RL_Datix-53",
+      "target": "Transformer-PV1-Patient_Visit-57"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_RL_Datix-53",
+      "target": "Transformer-DG1-Diagnosis-58"
+    },
+    {
+      "source": "Channel-ADT-41",
+      "target": "Destination-MILN_ADT_to_Varian_ARIA-59"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Varian_ARIA-59",
+      "target": "Transformer-MSH-Message_Header-60"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Varian_ARIA-59",
+      "target": "Transformer-PID-Patient_Identification-61"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Varian_ARIA-59",
+      "target": "Transformer-PD1-Patient_Additional_Demographic -62"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Varian_ARIA-59",
+      "target": "Transformer-NK1-Next_of_Kin-63"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Varian_ARIA-59",
+      "target": "Transformer-PV1-Patient_Visit  -64"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Varian_ARIA-59",
+      "target": "Transformer-PP1-Practitioner_Group-65"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Varian_ARIA-59",
+      "target": "Transformer-PV2-Patient_Visit_Additional_Info-66"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Varian_ARIA-59",
+      "target": "Transformer-OBX-Observation_Result-67"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Varian_ARIA-59",
+      "target": "Transformer-AL1-Allergy_Information-68"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Varian_ARIA-59",
+      "target": "Transformer-NTE-Notes_and_Comments -69"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Varian_ARIA-59",
+      "target": "Transformer-GT1-Guarantor  -70"
+    },
+    {
+      "source": "Channel-ADT-41",
+      "target": "Destination-MILN_ADT_to_PowerScribe-71"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_PowerScribe-71",
+      "target": "Transformer-MSH-Message_Header-72"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_PowerScribe-71",
+      "target": "Transformer-EVN Event_type-73"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_PowerScribe-71",
+      "target": "Transformer-PID-Patient_Identification-74"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_PowerScribe-71",
+      "target": "Transformer-PV1-Patient_Visit-75"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_PowerScribe-71",
+      "target": "Transformer-AL1-Patient_Allergy_Information-76"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_PowerScribe-71",
+      "target": "Transformer-GT1-Guarantor-77"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_PowerScribe-71",
+      "target": "Transformer-IN1-Insurance-78"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_PowerScribe-71",
+      "target": "Transformer-IN2-Insurance_Additional_Info-79"
+    },
+    {
+      "source": "Channel-ADT-41",
+      "target": "Destination-MILN_ADT_to_Fuji_PACS-80"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Fuji_PACS-80",
+      "target": "Transformer-MSH-Message-Header-81"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Fuji_PACS-80",
+      "target": "Transformer-EVN-Event-Type-82"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Fuji_PACS-80",
+      "target": "Transformer-PID-Patient_Identification-83"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Fuji_PACS-80",
+      "target": "Transformer-PV1-Patient_Visit-84"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Fuji_PACS-80",
+      "target": "Transformer-AL1-Patient_Allergy_Informatin-85"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Fuji_PACS-80",
+      "target": "Transformer-MRG_segment-86"
+    },
+    {
+      "source": "Channel-ADT-41",
+      "target": "Destination-MILN_ADT_to_Fuji_CVIS-87"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Fuji_CVIS-87",
+      "target": "Transformer-MSH-Header-Segment-88"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Fuji_CVIS-87",
+      "target": "Transformer-EVN-Event_type -89"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Fuji_CVIS-87",
+      "target": "Transformer-PID-Patient_Identification-90"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Fuji_CVIS-87",
+      "target": "Transformer-PV1-Patient_Visit-91"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Fuji_CVIS-87",
+      "target": "Transformer-AL1-Patient_Allergy_Information-92"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Fuji_CVIS-87",
+      "target": "Transformer-MRG-segment-93"
+    },
+    {
+      "source": "Channel-ADT-41",
+      "target": "Destination-MILN_ADT_to_Epiphany-94"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Epiphany-94",
+      "target": "Transformer-MSH-Message_Header-95"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Epiphany-94",
+      "target": "Transformer-EVN-Event_type-96"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Epiphany-94",
+      "target": "Transformer-PID-Patient_Identification-97"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Epiphany-94",
+      "target": "Transformer-PV1-Patient_Visit-98"
+    },
+    {
+      "source": "Channel-ADT-41",
+      "target": "Destination-MILN_ADT_to_MRS-99"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_MRS-99",
+      "target": "Transformer-MSH-Message_Header-100"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_MRS-99",
+      "target": "Transformer-EVN-Event_type-101"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_MRS-99",
+      "target": "Transformer-PID-Patient_Identification-102"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_MRS-99",
+      "target": "Transformer-PV1-Patient_Visit-103"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_MRS-99",
+      "target": "Transformer-AL1-Patient_Allergy_Information-104"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_MRS-99",
+      "target": "Transformer-GT1-Guarantor-105"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_MRS-99",
+      "target": "Transformer-IN1-Insurance-106"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_MRS-99",
+      "target": "Transformer-IN2-Insurance_Additional_Info-107"
+    },
+    {
+      "source": "Channel-ADT-41",
+      "target": "Destination-MILN_ADT_to_Pyxis-108"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Pyxis-108",
+      "target": "Transformer-MSH-Message_Header-109"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Pyxis-108",
+      "target": "Transformer-PID-Patient_Identification-110"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Pyxis-108",
+      "target": "Transformer-PV1-Patient_Visit-111"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Pyxis-108",
+      "target": "Transformer-NK1-Next_Of_Kin-112"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_Pyxis-108",
+      "target": "Transformer-AL1-Patient_Allergy_Information-113"
+    },
+    {
+      "source": "Channel-ADT-41",
+      "target": "Destination-MILN_ADT_to_DFM-114"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_DFM-114",
+      "target": "Transformer-MSH-Message_Header-115"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_DFM-114",
+      "target": "Transformer-EVN-Event_type  -116"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_DFM-114",
+      "target": "Transformer-PID-Patient_Identification  -117"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_DFM-114",
+      "target": "Transformer-PV1-Patient_Visit-118"
+    },
+    {
+      "source": "Destination-MILN_ADT_to_DFM-114",
+      "target": "Transformer-OBX-Observation_segment-119"
+    },
+    {
+      "source": "Channel-ARIA_ORU-120",
+      "target": "Destination-ARIA_ORU_to_MILN_MDM-121"
+    },
+    {
+      "source": "Channel-Quest_ORU-122",
+      "target": "Destination-Quest_Lab_ORU_to_MILN-123"
+    },
+    {
+      "source": "Destination-Quest_Lab_ORU_to_MILN-123",
+      "target": "Transformer-MSH-Message_Header-124"
+    },
+    {
+      "source": "Destination-Quest_Lab_ORU_to_MILN-123",
+      "target": "Transformer-PID-Patient_Identification-125"
+    },
+    {
+      "source": "Destination-Quest_Lab_ORU_to_MILN-123",
+      "target": "Transformer-ORC-Common_Order-126"
+    },
+    {
+      "source": "Destination-Quest_Lab_ORU_to_MILN-123",
+      "target": "Transformer-OBR-Observation_Request-127"
+    },
+    {
+      "source": "Destination-Quest_Lab_ORU_to_MILN-123",
+      "target": "Transformer-OBX-Obersation_Result-128"
+    },
+    {
+      "source": "Destination-Quest_Lab_ORU_to_MILN-123",
+      "target": "Transformer-NTE-Notes_And_Comments-129"
+    },
+    {
+      "source": "Channel-Pyxis_DFT-130",
+      "target": "Destination-Pyxis_DFT_to_MILN-131"
+    },
+    {
+      "source": "Channel-Powerscribe_ORU-132",
+      "target": "Destination-PowerScribe_ORU_to_MILN-133"
+    },
+    {
+      "source": "Channel-MRS_ORU-134",
+      "target": "Destination-MRs_ORU_to_MILN-135"
+    },
+    {
+      "source": "Channel-ITC_ORU-136",
+      "target": "Destination-ITC_Rad_ORU_to_MILN-137"
+    },
+    {
+      "source": "Channel-PACS_ORU-138",
+      "target": "Destination-Fuji_PACS_ORU_to_MILN-139"
+    },
+    {
+      "source": "Destination-Fuji_PACS_ORU_to_MILN-139",
+      "target": "Transformer-MSH-Message_Header-140"
+    },
+    {
+      "source": "Destination-Fuji_PACS_ORU_to_MILN-139",
+      "target": "Transformer-PID-Patient_Identification-141"
+    },
+    {
+      "source": "Destination-Fuji_PACS_ORU_to_MILN-139",
+      "target": "Transformer-PV1-Patient_Visit-142"
+    },
+    {
+      "source": "Destination-Fuji_PACS_ORU_to_MILN-139",
+      "target": "Transformer-ORC-Common_Order-143"
+    },
+    {
+      "source": "Destination-Fuji_PACS_ORU_to_MILN-139",
+      "target": "Transformer-OBR-Observation_Result-144"
+    },
+    {
+      "source": "Destination-Fuji_PACS_ORU_to_MILN-139",
+      "target": "Transformer-OBX-Obersation_Request-145"
+    },
+    {
+      "source": "Channel-CVIS_ORU-146",
+      "target": "Destination-Fuji_CVIS_ORU_to_MILN-147"
+    },
+    {
+      "source": "Channel-FTP_DFT_ORU-148",
+      "target": "Destination-Edelphyn_ORU_to_MILN-149"
+    },
+    {
+      "source": "Channel-FTP_DFT_ORU-148",
+      "target": "Destination-Methasoft_DFT_to_MILN-150"
+    },
+    {
+      "source": "Channel-FTP_DFT_ORU-148",
+      "target": "Destination-Metha_DFT_to_MILN_ORU-151"
+    },
+    {
+      "source": "Channel-FTP_DFT_ORU-148",
+      "target": "Destination-Cln_Sc_ORU_to_MILN-152"
+    },
+    {
+      "source": "Channel-EPIPHANY_ORU-153",
+      "target": "Destination-Epipany_ORU_to_MILN-154"
+    },
+    {
+      "source": "Channel-EMPI_ADT-155",
+      "target": "Destination-EMP_ADT_to_MILN-156"
+    },
+    {
+      "source": "Channel-Quest ORU-157",
+      "target": "Destination-Destination 1-158"
+    }
+  ],
+  "collapsedNodes": [],
+  "comments": {},
+  "statuses": {}
+}
